@@ -6,8 +6,13 @@ echo: false
 warning: false
 message: false
 ---
-
 A good looking plot
+
+```{r}
+
+```
+A good looking plot
+
 
 
 
@@ -19,6 +24,10 @@ A good looking plot
 library(primer.data)
 library(tidyverse)
 ```
+
+This plot illustrates the relationship between U.S. county population and economic connectedness, showing that larger populations don't necessarily lead to stronger economic ties. By applying a log scale to the population axis and overlaying a linear regression line, it becomes clear that the trend remains relatively flat—supporting the interpretation that population size has little influence on a county’s economic integration, as suggested by the subtitle.
+
+
 
 ```{r}
 #| label: population-vs-ec
