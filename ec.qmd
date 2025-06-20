@@ -1,10 +1,43 @@
 ---
 title: "Economic Connectedness"
+author: "Ali Ahmad"
 format: html
-echo : False
-message : False
+echo: false
+warning: false
+message: false
 ---
 
+A good looking plot
+
+
+
+
 ```{r}
+#| label: load-packages
+#| echo: false
+#| message: false
+library(primer.data)
 library(tidyverse)
+```
+
+```{r}
+#| label: population-vs-ec
+library(scales)
+ggplot(data = connectedness, aes(x = population, y = connectedness)) +
+  geom_point(color = "black", alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  scale_x_log10(
+    breaks = c(1000, 10000, 100000, 1000000, 10000000),
+    labels = label_comma()
+  ) +
+  labs(
+    title = "US County Populations versus Economic Connectedness",
+    subtitle = "Population size does not matter to EC",
+    x = "Population",
+    y = "Economic Connectedness",
+    caption = "Source: Opportunity Insights"
+  ) +
+  theme_minimal()
+
+
 ```
